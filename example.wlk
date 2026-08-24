@@ -8,9 +8,9 @@ object paquete {
 
     var mensajero = null
 
-	method destino(destinoElejido) {
-		destino = destinoElejido
-		valor = destinoElejido.valorDeDestino()
+	method destino(_destino) {
+		destino = _destino
+		valor = _destino.valorDeDestino()
 	}
 
 	method valor(){
