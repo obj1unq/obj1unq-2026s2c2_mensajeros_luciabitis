@@ -8,7 +8,7 @@ object paquete {
 
     var mensajero = null
 
-	method destino_(destinoElejido) {
+	method destino(destinoElejido) {
 		destino = destinoElejido
 		valor = destinoElejido.valorDeDestino()
 	}
@@ -25,8 +25,8 @@ object paquete {
 		return pagado
 	}
 
-	method mensajero_(mensajeroElejido){
-		mensajero = mensajeroElejido
+	method mensajero(_mensajero){
+		mensajero = _mensajero
 	}
 
 	method mensajero(){
@@ -86,20 +86,21 @@ object neo {
 
 	var llamada = false
     
-    var credito = false
+    //var credito = false
 
     const peso = 0
 
 	method puedeLlamar(){
-		return if (! self.credito()) false else llamada
+		return llamada    //if (self.credito()) true else llamada
 	}
 
-    method credito(){
-		return credito
-	}
+    //method credito(){
+	//	return credito
+	//}
 
 	method acreditar(){
-        credito = true
+        //credito = true
+		llamada = true
 	}
 
 	method peso(){
@@ -115,7 +116,7 @@ object sara {
 
     var peso = null
 
-	var pesoPropio = 60
+	var pesoPropio = 70
 
 	method puedeLLamar(){
 		return llamada
@@ -125,10 +126,14 @@ object sara {
 		return peso
 	}
 
-    method transporte_(transporteElejido){
+    method transporte(transporteElejido){
 	 transporte = transporteElejido
 	 peso = pesoPropio + transporteElejido.peso()
-}
+    }
+   
+    method pesoDeSara(peso) {
+	  pesoPropio = peso
+	}
 }
 
 
@@ -136,7 +141,7 @@ object moto {
   
 	const peso = 100
 
-	method peso(){
+	method pesoDeTransporte(){
 		return peso
 	}
 }
@@ -146,7 +151,7 @@ object camion {
   
 	const peso = 1000
 
-	method peso(){
+	method pesoDeTransporte(){
 		return peso
 	}
 }
