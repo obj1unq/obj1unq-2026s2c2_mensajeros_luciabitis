@@ -103,6 +103,10 @@ object neo {
 		llamada = true
 	}
 
+    method desacreditado() {
+	  llamada = false
+	}
+
 	method peso(){
 		return peso
 	}
